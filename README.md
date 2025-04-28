@@ -6,6 +6,6 @@ This is a Next.js project that showcases my portfolio, including my skills, proj
 
 You can view the live version of the portfolio here:
 
-[**Visit My Portfolio**](https://vercel.com/sai-sampath-boddus-projects/my-portfolio)
+[**Visit My Portfolio**](https://my-portfolio-sai-sampath-boddus-projects.vercel.app)
 
 Feel free to explore the website and check out my work!
