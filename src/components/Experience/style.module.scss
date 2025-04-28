@@ -1,0 +1,249 @@
+.experienceEducationSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 150px 30px;
+  background-color: #ffffff;
+  margin-bottom: 100px;
+  margin-top: 60px;
+
+  .sectionTitle {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #2e2e2e;
+    margin-bottom: 50px;
+    text-align: center;
+    word-spacing: 0.3rem;
+    letter-spacing: 0.5rem;
+
+    @media (max-width: 768px) {
+      font-size: 1.8rem; // Slightly smaller title for tablets
+    }
+    @media (max-width: 480px) {
+      font-size: 1.5rem; // Smaller title for mobile screens
+    }
+  }
+
+  .tabHeader {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 40px; // Increased margin to create gap between button and timeline
+    gap: 20px; // Added spacing between tabs
+
+    .tab {
+      cursor: pointer;
+      padding: 12px 25px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border: none;
+      border-radius: 15px;
+      background: linear-gradient(135deg, #b192e2, #604872); // Gradient background
+      color: white;
+      font-weight: bold;
+      font-size: 1.1rem;
+      box-shadow: 0 6px 1px rgba(0, 0, 0, 0.2); // Subtle 3D effect
+      transition: all 0.3s ease;
+      position: relative; // For glow effect
+
+      @media (max-width: 480px) {
+        font-size: 0.8rem; // Even smaller font for very small screens
+        padding: 8px 16px;
+      }
+
+      &:hover {
+        transform: translateY(-3px); // Lift on hover
+        box-shadow: 0 8px 15px rgba(96, 72, 114, 0.6); // Stronger shadow on hover
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: -4px;
+        left: -4px;
+        right: -4px;
+        bottom: -4px;
+        border-radius: 18px;
+        background: rgba(96, 72, 114, 0.4); // Glow effect
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      &:hover::after {
+        opacity: 1;
+      }
+    }
+
+    .activeTab {
+      background: linear-gradient(135deg, #2a1152, #899FFD); // Distinct gradient for active tab
+      box-shadow: 0 6px 12px rgba(96, 72, 114, 0.5); // Stronger shadow
+      transform: translateY(-2px); // Slight lift
+    }
+  }
+
+  .timeline {
+    width: 100%;
+    max-width: 800px;
+    position: relative;
+    padding: 50px 0;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: #455CE9;
+      transform: translateX(-50%);
+      z-index: 0;
+
+      @media (max-width: 480px) {
+        left: 20px; // Adjust the position for smaller screens
+      }
+    }
+  }
+
+  .timelineItemWrapper {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 50px;
+    position: relative;
+
+    &:nth-child(odd),
+    &:nth-child(even) {
+      flex-direction: column; // Override alternating layout for small screens
+
+      .experienceItem {
+        margin: 0; // Remove alternating margin for small screens
+      }
+    }
+
+    @media (min-width: 768px) {
+      &:nth-child(odd) {
+        flex-direction: row-reverse; // Restore alternating layout for larger screens
+
+        .experienceItem {
+          margin-left: 30px;
+        }
+      }
+
+    &:nth-child(odd) {
+      flex-direction: row-reverse;
+
+      .experienceItem {
+        margin-left: 30px;
+      }
+    }
+
+    &:nth-child(even) {
+      .experienceItem {
+        margin-right: 30px;
+      }
+    }
+  }
+}
+
+  .experienceItem {
+    position: relative;
+    background: #f5f5f5;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); // Stronger shadow
+    padding: 20px;
+    max-width: 400px;
+    width: 100%;
+    z-index: 1;
+
+    display: flex;
+    align-items: flex-start;
+
+    @media (max-width: 768px) {
+      padding: 15px; // Reduced padding for tablets
+    }
+
+    @media (max-width: 480px) {
+      padding: 10px; // Even smaller padding for mobile
+    }
+
+
+    .timelineMarker {
+      position: absolute;
+      left: -32px;
+      top: 16px;
+      height: 16px;
+      width: 16px;
+      border-radius: 50%;
+      background: #455CE9;
+      z-index: 2;
+
+      @media (max-width: 480px) {
+        left: -12px; // Adjust marker position for smaller screens
+        height: 12px;
+        width: 12px;
+      }
+    }
+
+    .timelineContent {
+      padding-left: 40px;
+
+      h2 {
+        margin: 0;
+        font-size: 1.6rem;
+        color: #333;
+
+        @media (max-width: 768px) {
+          font-size: 1.4rem; // Slightly smaller font for tablets
+        }
+
+        @media (max-width: 480px) {
+          font-size: 1.2rem; // Smaller font for mobile
+        }
+
+      }
+
+      h3 {
+        margin: 5px 0;
+        font-size: 1.2rem;
+        color: #555;
+
+        @media (max-width: 768px) {
+          font-size: 1rem;
+        }
+
+        @media (max-width: 480px) {
+          font-size: 0.9rem;
+        }
+      }
+
+      .duration {
+        font-size: 1rem;
+        color: #888;
+        margin-bottom: 10px;
+
+        @media (max-width: 768px) {
+          font-size: 0.9rem;
+        }
+
+        @media (max-width: 480px) {
+          font-size: 0.8rem;
+        }
+      }
+
+      p {
+        font-size: 1rem;
+        color: #444;
+
+        @media (max-width: 768px) {
+          font-size: 0.9rem;
+        }
+
+        @media (max-width: 480px) {
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+}

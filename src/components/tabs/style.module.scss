@@ -1,0 +1,173 @@
+.myActivities {
+  padding: 40px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff;
+  margin-top: 50px;
+  margin-bottom: 50px;
+
+  .sectionTitle {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #2e2e2e;
+    margin-bottom: 20px;
+    text-align: center;
+    word-spacing: 0.3rem;
+    letter-spacing: 0.5rem;
+
+    @media (max-width: 768px) {
+      font-size: 1.7rem; // Slightly smaller title on smaller screens
+      word-spacing: 0.2rem;
+      letter-spacing: 0.3rem;
+    }
+  }
+
+  .certificationList {
+    list-style: none; // Removes bullet points
+    padding: 0; // Removes default padding
+    margin: 0; // Removes default margin
+  
+    li {
+      margin-bottom: 10px; // Adds spacing between items
+      font-size: 1rem; // Adjust font size if necessary
+    }
+  
+    a {
+      color: #455CE9; // Link color
+      text-decoration: none;
+      font-weight: bold;
+  
+      &:hover {
+        text-decoration: underline; // Underline on hover
+      }
+    }
+  }
+
+  .tabHeader {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 1000px;
+    margin-bottom: 30px;
+    gap: 5px; // Increased spacing between buttons
+
+    .tab {
+      cursor: pointer;
+      padding: 12px 25px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border: none;
+      border-radius: 15px;
+      background: linear-gradient(135deg, #b192e2, #604872); // Gradient background
+      color: white;
+      font-weight: bold;
+      font-size: 1rem;
+      box-shadow: 0 6px 1px rgba(0, 0, 0, 0.2); // Subtle 3D effect
+      transition: all 0.3s ease;
+      position: relative; // For glow effect
+
+      svg {
+        font-size: 1.2rem;
+        
+      }
+
+      &:hover {
+        transform: translateY(-3px); // Lift on hover
+        box-shadow: 0 8px 15px rgba(69, 92, 233, 0.6); // Stronger shadow on hover
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: -4px;
+        left: -4px;
+        right: -4px;
+        bottom: -4px;
+        border-radius: 18px;
+        background: rgba(69, 92, 233, 0.4); // Glow effect
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      &:hover::after {
+        opacity: 1;
+      }
+    }
+
+    .activeTab {
+      background: linear-gradient(135deg, #2a1152, #899FFD); // Distinct gradient for active tab
+      box-shadow: 0 6px 12px rgba(69, 92, 233, 0.5); // Stronger shadow
+      transform: translateY(-2px); // Slight lift
+    }
+  }
+
+  .tabContent {
+    width: 100%;
+    max-width: 1000px;
+    height: 400px; // Adjusted for more spacious content
+    padding: 40px; // Increased padding for better spacing
+    margin-top: 30px; // Gap between buttons and content box
+    background: #f5f5f5; // Light grey background for content box
+    border-radius: 15px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2); // Modern shadow
+
+    @media (max-width: 768px) {
+      padding: 15px; // Reduced padding for smaller screens
+    }
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+
+      .card {
+        background: #f5f5f5; // Clean white card background
+        border-radius: 10px;
+        padding: 20px;
+        width: 100%;
+        max-width: 500px;
+        text-align: center;
+        //box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); // Softer shadow
+        transition: transform 0.3s ease;
+
+        @media (max-width: 768px) {
+          max-width: 90%; // Full-width cards on smaller screens
+        }
+
+        h3 {
+          margin-top: 10px;
+          color: #000000; // Purple text for card headers
+        }
+
+        p {
+          color: #333; // Black text for descriptions
+          
+        }
+
+        a {
+          color: #455CE9;
+          text-decoration: none;
+          font-weight: bold;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+
+        &:hover {
+          transform: translateY(-5px);
+        }
+      }
+    }
+  }
+  @media (max-width: 768px) {
+    padding: 20px; // Reduced overall padding for smaller screens
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+}

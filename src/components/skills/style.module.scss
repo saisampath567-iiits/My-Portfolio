@@ -1,0 +1,248 @@
+.skillsSection {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    background-color: #ffffff;
+    overflow: hidden;
+
+    .sectionTitle {
+        position: absolute;
+        top: 20px;
+        font-size: 2rem;
+        font-weight: bold;
+        color: #333;
+        text-align: center;
+
+        @media (max-width: 768px) {
+            font-size: 1.8rem; // Adjust title size for tablets
+          }
+      
+        @media (max-width: 480px) {
+            font-size: 1.5rem; // Smaller title size for mobile
+          }
+    }
+
+    .initialBox {
+        position: absolute;
+        width: 300px;
+        height: 200px;
+        background: linear-gradient(135deg, #b192e2, #c09cdb); /* Subtle gradient for depth */
+        border-radius: 20px;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12); /* Soft shadow for depth */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        text-align: center;
+        z-index: 2;
+        border: 1px solid #dedede; /* Subtle border for a premium look */
+        overflow: hidden;
+
+        &:hover {
+            transform: translateY(-3px); /* Slight lift */
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); /* Enhanced shadow for interaction */
+            //background: linear-gradient(135deg, #f6f6f6, #71428f); /* Reverse gradient */
+        }
+    
+        h2 {
+            font-size: 1.4rem; /* Slightly larger font size */
+            font-weight: 600; /* Medium-bold font for prominence */
+            color: #444; /* Slightly darker neutral tone for contrast */
+            letter-spacing: 0.3px; /* Slight improvement in readability */
+            text-transform: uppercase; /* Modern typography style */
+        }
+
+        /* Adjust size only for mobile layouts */
+        @media (max-width: 768px) {
+            width: 40%; // Dynamically adjusts to 40% of viewport width
+            height: 20vh; // Dynamically adjusts to 20% of viewport height
+          }
+        
+        @media (max-width: 480px) {
+            width: 60%; // Dynamically adjusts to 60% of viewport width
+            height: 25vh; // Dynamically adjusts to 25% of viewport height
+          }
+        
+        
+    
+        /* Subtle hover effect with glow */
+    
+        /* Decorative corner elements for modern look */
+        &:before,
+        &:after {
+            content: "";
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: rgba(200, 200, 200, 0.2); /* Translucent overlay */
+            transition: transform 0.5s ease;
+        }
+        &:before {
+            top: -50px;
+            left: -50px;
+        }
+        &:after {
+            bottom: -50px;
+            right: -50px;
+        }
+    
+        &:hover:before {
+            transform: translate(10px, 10px) scale(1.2); /* Subtle hover movement */
+        }
+        &:hover:after {
+            transform: translate(-10px, -10px) scale(1.2); /* Subtle hover movement */
+        }
+    }
+
+    .bubbleContainer {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+
+
+        @media (max-width: 768px) {
+            gap: 8px; // Reduced gap for smaller screens
+          }
+      
+          @media (max-width: 480px) {
+            gap: 5px; // Minimal gap for mobile
+          }
+    }
+
+    .skillBubble {
+        background-color: linear-gradient(135deg, #e66465, #9198e5);
+        border-radius: 50%;
+        padding: 20px;
+        width: 150px;
+        height: 150px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+        font-weight: bold;
+        color: #333;
+        cursor: pointer;
+        transition: transform 0.3s, box-shadow 0.3s;
+
+        &:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 30px rgba(105, 153, 255, 0.5);
+        }
+        @media (max-width: 768px) {
+            width: 120px; // Smaller bubbles for tablets
+            height: 120px;
+            font-size: 0.9rem; // Adjust font size
+          }
+      
+        @media (max-width: 480px) {
+            width: 100px; // Smaller bubbles for mobile
+            height: 100px;
+            font-size: 0.8rem;
+          }
+    }
+
+    .skillDetail {
+        position: absolute;
+        bottom: 10%;
+        left: 50%;
+        transform: translate(-50%, 0);
+        width: 80%;
+        max-width: 600px;
+        background: #ffffff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        z-index: 3;
+
+        @media (max-width: 480px) {
+            left: 10%; // Move to the left side of the screen
+            transform: translate(0, 0); // Remove center alignment only for mobile
+            width: 60%; // Smaller size for mobile screens
+            padding: 15px; // Adjusted padding for compact appearance
+        }
+
+        h3 {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #0a0b0a;
+            margin-bottom: 20px;
+
+            @media (max-width: 768px) {
+                font-size: 1.8rem; // Adjust title size for tablets
+              }
+            @media (max-width: 480px) {
+                font-size: 1.5rem; // Smaller title for mobile
+              }
+        }
+
+        p {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 20px;
+
+            @media (max-width: 768px) {
+                font-size: 0.9rem; // Adjust font size for tablets
+              }
+        
+            @media (max-width: 480px) {
+                font-size: 0.8rem; // Smaller font for mobile
+              }
+        }
+
+        .toolsList {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+
+            .toolItem {
+                background-color: #f5f5f5;
+                padding: 5px 15px;
+                border-radius: 15px;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                font-size: 0.9rem;
+                color: #333;
+            
+                @media (max-width: 480px) {
+                    padding: 2px 8px; // Adjust padding for mobile
+                    font-size: 0.6rem; // Smaller font for mobile
+                }
+            }
+        }
+
+        .closeButton { 
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #455ce9;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+
+            &:hover {
+                background-color: #334bd3;
+            }
+            @media (max-width: 768px) {
+                padding: 8px 16px; // Adjust padding for tablets
+                font-size: 0.9rem;
+              }
+        
+            @media (max-width: 480px) {
+                padding: 6px 12px; // Adjust padding for mobile
+                font-size: 0.8rem;
+              }
+        }
+    }
+
+}

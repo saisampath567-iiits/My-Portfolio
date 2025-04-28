@@ -1,0 +1,199 @@
+.contact {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #000000;
+    position: relative;
+    overflow: hidden;
+    min-height: 600px; /* Default height */
+
+    .headline {
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 1.5rem;
+        color: #ffffff;
+        text-align: center;
+        z-index: 1;
+    }
+
+    .splineWrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+
+        canvas {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        @media (max-width: 480px) {
+            display: none; /* Hide Spline for mobile screens */
+        }
+    }
+
+    .watermarkCover {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        width: 150px;
+        height: 60px;
+        background-color: #030202;
+        z-index: 2;
+        border-radius: 15px;
+
+        @media (max-width: 480px) {
+            width: 100px; /* Further smaller size */
+            height: 40px;
+        }
+    }
+
+    .body {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        max-width: 1200px;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+
+        .leftText {
+            flex: 1;
+            text-align: left;
+            padding-left: 50px;
+
+            h2 {
+                font-size: 2.5rem;
+                font-weight: bold;
+                margin: 0;
+                background: linear-gradient(135deg, #b192e2, #604872);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                text-fill-color: transparent;
+
+                @media (max-width: 768px) {
+                    font-size: 1.5rem; /* Adjust for tablets */
+                }
+
+                @media (max-width: 480px) {
+                    font-size: 1.2rem; /* Smallest size for mobile */
+                }
+            }
+        }
+
+        .rightIcons {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 50px;
+            gap: 20px;
+
+            a {
+                color: rgb(181, 139, 213);
+                font-size: 2rem;
+                transition: color 0.3s ease;
+
+                &:hover {
+                    color: #ffffff;
+                }
+
+                @media (max-width: 768px) {
+                    font-size: 1.5rem; /* Reduce icon size for tablets */
+                }
+
+                @media (max-width: 480px) {
+                    font-size: 1.2rem; /* Smallest size for mobile */
+                }
+            }
+        }
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 1024px) {
+        height: auto; /* Adjust height for content */
+
+        .splineWrapper {
+            height: 70%; /* Limit Spline height */
+        }
+
+        .body {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+
+            .leftText {
+                text-align: center;
+                padding: 0;
+                margin-bottom: 20px;
+
+                h2 {
+                    font-size: 2rem; /* Reduce text size */
+                }
+            }
+
+            .rightIcons {
+                justify-content: center;
+                padding: 0;
+                gap: 15px;
+
+                a {
+                    font-size: 1.8rem; /* Adjust icon size */
+                }
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        height: auto; /* Adjust height for content */
+        min-height: 400px; /* Ensure section is not too small */
+
+        .body {
+            flex-direction: column;
+            align-items: center;
+            padding: 10px;
+
+            .leftText h2 {
+                font-size: 1.5rem; /* Adjust text size */
+            }
+
+            .rightIcons {
+                gap: 10px;
+
+                a {
+                    font-size: 1.5rem; /* Adjust icon size */
+                }
+            }
+        }
+    }
+
+    @media (max-width: 480px) {
+        height: auto; /* Let content dictate height */
+        min-height: 350px; /* Prevent shrinking */
+
+        .body {
+            padding: 10px;
+
+            .leftText h2 {
+                font-size: 1.2rem; /* Smaller text size */
+            }
+
+            .rightIcons {
+                gap: 8px;
+
+                a {
+                    font-size: 1.2rem; /* Adjust icon size */
+                }
+            }
+        }
+    }
+}

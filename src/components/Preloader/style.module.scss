@@ -1,0 +1,75 @@
+.introduction{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 99;
+    background-color: #F5F5F7;
+    svg{
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: calc(100% + 300px);
+        path{
+            fill:  #F5F5F7;
+        }
+    }
+    p{
+        display: flex;
+        color: black;
+        font-size: 36px;
+        align-items: center;
+        position: absolute;
+        z-index: 1;
+        span{
+            display: block;
+            width: 10px;
+            height: 10px;
+            background-color: black;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+    }
+    @media (max-width: 1024px) {
+        p {
+            font-size: 34px; // Adjust font size for tablet
+        }
+
+        span {
+            width: 8px; // Adjust dot size for smaller screens
+            height: 8px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        p {
+            font-size: 30px; // Adjust font size for mobile
+        }
+
+        span {
+            width: 6px; // Adjust dot size further for mobile
+            height: 6px;
+        }
+
+        svg {
+            height: calc(100% + 200px); // Adjust curve height for smaller screens
+        }
+    }
+
+    @media (max-width: 480px) {
+        p {
+            font-size: 24px; // Smallest size for very small devices
+        }
+
+        span {
+            width: 5px; // Further adjust dot size
+            height: 5px;
+        }
+
+        svg {
+            height: calc(100% + 150px); // Ensure proper coverage
+        }
+    }
+}

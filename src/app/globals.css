@@ -1,0 +1,7 @@
+body {
+    margin: 0;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-y: auto; /* Allow vertical scrolling */
+    cursor: auto; /* Reset cursor after the preloader */
+    height: auto;
+}

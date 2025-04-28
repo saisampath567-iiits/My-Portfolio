@@ -1,0 +1,172 @@
+.header {
+  position: absolute;
+  display: flex;
+  z-index: 10;
+  top: 0;
+  color: #333333;
+  padding: 20px;
+  justify-content: space-between;
+  width: 100%;
+  font-weight: 300;
+  box-sizing: border-box;
+  align-items: center;
+
+  .logo {
+    display: flex;
+    cursor: pointer;
+
+    p {
+      margin: 0px;
+      transition: all 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+      font-size: clamp(0.7rem, 2vw, 1.5rem); // Scales font size between 1rem and 1.5rem
+    }
+
+    .name {
+      display: flex;
+      position: relative;
+      overflow: hidden;
+      white-space: nowrap;
+      margin-left: 5px;
+      transition: all 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+
+      p {
+        position: relative;
+        color: #2f2d2d; // Adjust text color
+        transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+        &:nth-of-type(2) {
+          padding-left: 0.3em;
+        }
+        &:nth-of-type(3) {
+          position: absolute;
+          left: 120px;
+          padding-left: 0.3em;
+        }
+      }
+    }
+
+    &:hover {
+      .copyright {
+        transform: rotate(360deg);
+      }
+
+      .name {
+        padding-right: 30px;
+        .codeBy {
+          transform: translateX(-100%);
+        }
+        .sampath {
+          transform: translateX(-65px);
+        }
+        .orlina {
+          transform: translateX(-65px);
+        }
+      }
+    }
+  }
+
+
+  .navigationLinks {
+    display: flex;
+    gap: clamp(15px, 3vw, 30px); // Dynamic spacing between links
+
+    a {
+      color: #000000;
+      font-weight: bold;
+      font-size: clamp(0.8rem, 2vw, 1rem); // Dynamic font size for links
+      text-decoration: none;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: #455ce9;
+      }
+    }
+  }
+
+  .contactButtonContainer {
+    display: flex;
+    gap: clamp(10px, 2vw, 20px); // Adjust spacing between GitHub icon and button
+    align-items: center;
+
+    .githubIcon {
+      font-size: clamp(1.5rem, 3vw, 2rem); // Scales icon size
+      color: #333333;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: #a850eb;
+      }
+    }
+
+    .contactButton {
+      background: #1c1d20;
+      border: 2px solid #ffffff;
+      padding: clamp(8px, 2vw, 12px) clamp(16px, 3vw, 24px); // Scalable padding
+      color: #ffffff;
+      font-size: clamp(0.9rem, 2vw, 1.1rem); // Scales font size
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border-radius: 30px;
+      font-weight: bold;
+
+      &:hover {
+        background-color: #a784cc;
+        color: #100e13;
+        transform: scale(1.05);
+        box-shadow: 0 4px 10px rgba(166, 145, 186, 0.5);
+      }
+    }
+  }
+}
+
+.contactOptions {
+  position: absolute;
+  top: 100px;
+  right: 50px;
+  display: flex;
+  gap: clamp(10px, 2vw, 20px); // Responsive spacing
+  z-index: 11;
+
+  a {
+    color: #444444;
+    font-size: clamp(1.2rem, 3vw, 1.5rem); // Adjust icon size dynamically
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: #8757ae;
+    }
+  }
+}
+
+/* Media Queries for Small Adjustments */
+@media (max-width: 768px) {
+  .header {
+    padding: 15px;
+
+    .logo {
+      p {
+        font-size: clamp(1rem, 2vw, 1.3rem); // Keep text readable
+      }
+    }
+
+    .contactButton {
+      padding: clamp(6px, 2vw, 10px) clamp(12px, 3vw, 20px); // Smaller buttons for small screens
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 10px;
+
+    .logo {
+      p {
+        font-size: clamp(0.9rem, 2vw, 1rem);
+      }
+    }
+
+    .contactButton {
+      padding: clamp(5px, 1vw, 8px) clamp(10px, 2vw, 16px);
+      font-size: clamp(0.8rem, 1.5vw, 1rem);
+    }
+  }
+}
